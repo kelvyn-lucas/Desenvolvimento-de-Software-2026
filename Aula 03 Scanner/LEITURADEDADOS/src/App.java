@@ -6,7 +6,7 @@ public class App {
 
         System.out.print("Digite um número: "); //Exibe mensagem
         int numero = banana.nextInt(); //Lê do teclado
-        System.out.println("O tamanho do seu pênis é "+ numero +"!!"); //exibe o numero digitado
+        System.out.println("O numero é: "+ numero); //exibe o numero digitado
 
         System.out.println("Digite outro numero: ");
          int numero2 = banana.nextInt();
@@ -14,7 +14,10 @@ public class App {
          int soma = numero + numero2;
          System.out.println("O resultado da soma é "+ soma);
 
-
+        int num1 = 0;
+         while(num1 < 10){
+            System.out.print(" - "+(num1++));
+         }
 
 
 
@@ -22,3 +25,4 @@ public class App {
         banana.close(); // Fecha o leitor
     }
 }
+
