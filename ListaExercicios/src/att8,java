@@ -1,0 +1,54 @@
+import java.util.Arrays;
+
+public class MergeArrays {
+
+    public static void main(String[] args) {
+        // Exemplo de listas de preços já ordenadas
+        double[] listaA = {10.50, 25.00, 40.00, 55.00};
+        double[] listaB = {15.00, 22.50, 45.00, 60.00, 75.00};
+
+        double[] resultado = realizarMerge(listaA, listaB);
+
+        System.out.println("Lista A: " + Arrays.toString(listaA));
+        System.out.println("Lista B: " + Arrays.toString(listaB));
+        System.out.println("Resultado Merge: " + Arrays.toString(resultado));
+    }
+
+    public static double[] realizarMerge(double[] array1, double[] array2) {
+        int tam1 = array1.length;
+        int tam2 = array2.length;
+        double[] resultante = new double[tam1 + tam2];
+
+        int i = 0; // Ponteiro para o array1
+        int j = 0; // Ponteiro para o array2
+        int k = 0; // Ponteiro para o array resultante
+
+        // Enquanto houver elementos em AMBOS os arrays
+        while (i < tam1 && j < tam2) {
+            if (array1[i] <= array2[j]) {
+                resultante[k] = array1[i];
+                i++;
+            } else {
+                resultante[k] = array2[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Se o array1 ainda não terminou, descarrega o restante
+        while (i < tam1) {
+            resultante[k] = array1[i];
+            i++;
+            k++;
+        }
+
+        // Se o array2 ainda não terminou, descarrega o restante
+        while (j < tam2) {
+            resultante[k] = array2[j];
+            j++;
+            k++;
+        }
+
+        return resultante;
+    }
+}
