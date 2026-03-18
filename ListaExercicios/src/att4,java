@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ConversorMes {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Definição do array com os nomes dos meses
+        String[] meses = {
+            "Janeiro", "Fevereiro", "Março", "Abril", 
+            "Maio", "Junho", "Julho", "Agosto", 
+            "Setembro", "Outubro", "Novembro", "Dezembro"
+        };
+
+        System.out.print("Digite o número do mês (1-12): ");
+        int numeroMes = input.nextInt();
+
+        // Validação: o número deve estar entre 1 e 12
+        if (numeroMes >= 1 && numeroMes <= 12) {
+            // Acessamos o índice [numeroMes - 1] pois o array começa em 0
+            String mesExtenso = meses[numeroMes - 1];
+            System.out.println("Mês: " + mesExtenso);
+        } else {
+            System.out.println("Inválido!");
+        }
+
+        input.close();
+    }
+}
