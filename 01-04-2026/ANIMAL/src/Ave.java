@@ -1,0 +1,28 @@
+public class Ave extends Animal {
+    private String local;
+    private boolean migracao;
+
+    public Ave(String nome, int recinto) {
+        super(nome, recinto);
+    }
+    public Ave() {
+    }
+    public String getLocal() {
+        return local;
+    }
+    public void setLocal(String local) {
+        this.local = local;
+    }
+    public boolean isMigracao() {
+        return migracao;
+    }
+    public void isMigracao(boolean migracao){
+        this.migracao = migracao;
+    }
+    @Override
+    public String toString() {
+        return "Ave local = " + local + ", migração = " + migracao + ", toString() = " + super.toString() + "]";
+    }
+
+
+}
